@@ -11,6 +11,7 @@ gem 'dm-timestamps'
 gem 'dm-validations'
 gem 'dm-aggregates'
 gem 'dm-migrations'
+gem 'rack-tracker'
 
 group :development do
   gem 'foreman'
