@@ -17,14 +17,17 @@ helpers do
   # add your helpers here
 end
 
-# root page
 get "/" do
-  request.env['tracker'] = {
-    'google_analytics' => [
-      { 'class_name' => 'Send', 'category' => 'Visits', 'action' => 'Hit', 'label' => 'Standard', 'value' => 1 }
-    ]
-  }
+  track("google_analytics", { "class_name" => "Send", "category" => "Visits", "action" => "Hit" })
 
   @profiles = Profile.all
   erb :root
+end
+
+def track(tool_name, event_params = {})
+  default_params = { "label" => "Standard", "value" => 1 }
+
+  request.env["tracker"] = {
+    "google_analytics" => [ default_params.merge(event_params) ]
+  }
 end
