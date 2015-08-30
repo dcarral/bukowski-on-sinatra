@@ -13,14 +13,8 @@ configure :production, :development do
   enable :logging
 end
 
-helpers do
-  # add your helpers here
-end
-
 get "/" do
   track("google_analytics", { "class_name" => "Send", "category" => "Visits", "action" => "Hit" })
-
-  @profiles = Profile.all
   erb :root
 end
 
