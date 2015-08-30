@@ -1,0 +1,6 @@
+{
+  "name": "bukowski-on-sinatra",
+  "dependencies": {
+    "octicons": "*"
+  }
+}
