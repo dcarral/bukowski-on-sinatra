@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title || SiteConfig.title %></title>
-    <link href="/main.css" rel="stylesheet" type="text/css"></link>
+    <title><%= @title || "Bukowski on Sinatra" %></title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/octicons/octicons/octicons.css" rel="stylesheet" type="text/css">
+    <link href="images/favicon.ico" rel="icon">
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <div class="logo">
-          <h1>
-            <a href="/"><%= SiteConfig.title %></a>
-            </h1>
-        </div>
-      </div>
       <div class="content">
         <%= yield %>
       </div>
       <div class="footer">
-        <p class="legal">&mdash; &copy; <%= Time.now.strftime("%Y") %> <%= SiteConfig.author %> &mdash;</p>
+        <span class="mega-octicon octicon-mark-github"></span>
+        <a href="https://github.com/dcarral/bukowski-on-sinatra">dcarral/bukowski-on-sinatra</a>
       </div>
     </div>
   </body>
